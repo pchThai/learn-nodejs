@@ -8,7 +8,7 @@ const posts = require('./routes/posts');
 const app = express();
 //start handlebars midleware
 app.engine('handlebars',exphbs());
-app.set('view engine','handlebars')
+app.set('view engine','handlebars');
 //ket noi Datbase
 const {connectDB} = require('./config/db');
 const req = require('express/lib/request');
