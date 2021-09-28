@@ -2,12 +2,16 @@
 require('dotenv').config();
 const express = require('express');
 const exphbs = require('express-handlebars');
+const bodyParser = require('body-parser');
 //import router
 const posts = require('./routes/posts');
 //start app
 const app = express();
 //start handlebars midleware
 app.engine('handlebars',exphbs());
+//start bordyParser midleware
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 app.set('view engine','handlebars');
 //ket noi Datbase
 const {connectDB} = require('./config/db');
